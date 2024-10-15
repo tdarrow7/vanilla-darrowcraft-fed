@@ -6,6 +6,8 @@
 // import { SignInOut } from './SignInOut'
 
 import { LogoBox } from "./LogoBox";
+import { PrimaryNav } from "./PrimaryNav";
+import { SecondaryNav } from "./SecondaryNav";
 
 export const Masthead = () => {
   return (
@@ -20,8 +22,8 @@ export const Masthead = () => {
                             <MobileNav/> */}
             </div>
             <div className="hidden sm:block">
-              {/* <SecondaryNav/>
-                            <PrimaryNav/> */}
+              <SecondaryNav />
+              <PrimaryNav />
             </div>
           </div>
         </div>
