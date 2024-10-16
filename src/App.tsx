@@ -1,13 +1,11 @@
-import React, { Children } from "react";
+import React from "react";
 import "../src/output.css";
 import "./globals.css";
-import { CodeProjectContainer } from "./components/codeprojects/CodeProjectContainer";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/ui/Layout";
 import { Home } from "./routes/Home";
 
 const App: React.FC = () => {
-  const hd = false;
   return (
     // <section className="mx">
     //   <div className="container mx-auto">
