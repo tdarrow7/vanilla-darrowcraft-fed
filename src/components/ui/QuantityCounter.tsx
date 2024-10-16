@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { AiFillMinusCircle } from "react-icons/ai";
 
@@ -12,30 +15,27 @@ export const QuantityCounter: React.FC<QuantityCounterProps> = ({
 }) => {
   const handleDecrement = () => {
     setQuantity((prev) => (prev > 0 ? prev - 1 : prev));
+    console.log("quantity? ", quantity);
   };
 
   const handleIncrement = () => {
     setQuantity((prev) => prev + 1);
+    console.log("quantity? ", quantity);
   };
 
   return (
     <div className="bg-gray-200 rounded-3xl p-2 w-fit flex justify-between items-center">
-      <button
-        onClick={handleDecrement}
-        className={`text-2xl hover:text-stone-600 cursor-pointer transition-all ${
-          quantity === 0 ? "opacity-50 pointer-events-none" : ""
+      <AiFillMinusCircle
+        className={`text-2xl hover:text-stone-600 cursor-pointer transition-colors ${
+          quantity === 0 ? "pointer-events-none opacity-5" : ""
         }`}
-      >
-        <AiFillMinusCircle />
-      </button>
-
+        onClick={handleDecrement}
+      ></AiFillMinusCircle>
       <span className="w-20 mx-1 text-center">{quantity}</span>
-      <button
-        className="text-2xl hover:text-stone-600 cursor-pointer transition-all"
+      <AiFillPlusCircle
+        className="text-2xl hover:text-stone-600 cursor-pointer transition-colors"
         onClick={handleIncrement}
-      >
-        <AiFillPlusCircle />
-      </button>
+      ></AiFillPlusCircle>
     </div>
   );
 };

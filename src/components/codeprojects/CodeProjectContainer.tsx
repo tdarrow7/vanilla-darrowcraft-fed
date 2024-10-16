@@ -3,8 +3,6 @@ import { CodeProjectModel } from "./CodeProject";
 import { CodeProjectList } from "./CodeProjectList";
 import "../../api/codeprojects.json";
 
-const stackTypes = ["Frontend", "Backend", "Full-Stack"];
-
 export const CodeProjectContainer = () => {
   const [loading, setIsLoading] = useState(true);
   const [codeProjectList, setcodeProjectList] = useState<CodeProjectModel[]>(
@@ -23,7 +21,7 @@ export const CodeProjectContainer = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3030/codeprojects");
+      const response = await fetch("https://api.timdarrow.com/codeprojects");
 
       const data = await response.json();
       return data;
@@ -34,15 +32,11 @@ export const CodeProjectContainer = () => {
 
   return (
     <>
-      <h2>Stuff</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
         <CodeProjectList codeProjectList={codeProjectList} />
       )}
-      {/* {stackTypes.map((type) => {
-        return <p key={type}>{type}</p>;
-      })} */}
     </>
   );
 };
