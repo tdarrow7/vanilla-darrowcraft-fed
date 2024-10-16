@@ -1,16 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-type Props = {
-  to: string;
-  // className?: string;
-  // target?: string;
-  name: string;
-  className: string;
-  target?: string;
-  props?: any[];
-};
-
 export interface Props1 {
   to: string;
   name: string;

@@ -1,0 +1,79 @@
+{ "coffee": [
+    {
+        "id": 2,
+        "url": "https://api.timdarrow.com/coffee/2/",
+        "name": "Flow",
+        "isground": false,
+        "description": "The best Coffee Ever. Best with Moka Pot",
+        "dateadded": "2024-06-29T00:11:39.260153Z",
+        "imageurl": "https://i.ibb.co/QmR28Kf/justus-menke-h-XLIjzpyv08-unsplash.jpg",
+        "brand": "Purity Coffee",
+        "roasttype": "Medium"
+    },
+    {
+        "id": 3,
+        "url": "https://api.timdarrow.com/coffee/3/",
+        "name": "Calm",
+        "isground": false,
+        "description": "Those who like bold flavor will love this type",
+        "dateadded": "2024-06-29T00:12:05.639771Z",
+        "imageurl": "https://i.ibb.co/37tvfyT/mockup-graphics-m7ijvn-NGa-V0-unsplash.jpg",
+        "brand": "Purity Coffee",
+        "roasttype": "Dark"
+    },
+    {
+        "id": 4,
+        "url": "https://api.timdarrow.com/coffee/4/",
+        "name": "Folgers Generic Costco Roast",
+        "isground": false,
+        "description": "Those who despise life will enjoy this coffee",
+        "dateadded": "2024-06-29T00:12:29.131897Z",
+        "imageurl": "https://i.ibb.co/3Rw8WXX/christina-rumpf-LMzw-JDu6h-TE-unsplash.jpg",
+        "brand": "Folgers",
+        "roasttype": "Espresso"
+    },
+    {
+        "id": 5,
+        "url": "https://api.timdarrow.com/coffee/5/",
+        "name": "Death Wish Coffee",
+        "isground": true,
+        "description": "Brutal caffeine loaded coffee.",
+        "dateadded": "2024-06-29T00:12:53.888510Z",
+        "imageurl": "https://i.ibb.co/D9yD8xP/nathan-dumlao-n-BJHO6wm-RWw-unsplash.jpg",
+        "brand": "Purity Coffee",
+        "roasttype": "Light"
+    },
+    {
+        "id": 6,
+        "url": "https://api.timdarrow.com/coffee/6/",
+        "name": "Big Sky Coffee",
+        "isground": false,
+        "description": "Excellent medium roast",
+        "dateadded": "2024-06-29T00:13:15.939593Z",
+        "imageurl": "https://i.ibb.co/D9yD8xP/nathan-dumlao-n-BJHO6wm-RWw-unsplash.jpg",
+        "brand": "Folgers",
+        "roasttype": "Medium"
+    },
+    {
+        "id": 7,
+        "url": "https://api.timdarrow.com/coffee/7/",
+        "name": "San Francisco Coffee",
+        "isground": false,
+        "description": "Espresso Blend. Not delicious",
+        "dateadded": "2024-06-29T00:13:34.168719Z",
+        "imageurl": "https://i.ibb.co/D9yD8xP/nathan-dumlao-n-BJHO6wm-RWw-unsplash.jpg",
+        "brand": "Folgers",
+        "roasttype": "Espresso"
+    },
+    {
+        "id": 1,
+        "url": "https://api.timdarrow.com/coffee/1/",
+        "name": "Gunship",
+        "isground": false,
+        "description": "Light Roast",
+        "dateadded": "2024-07-23T05:50:10.975339Z",
+        "imageurl": "https://i.ibb.co/3Rw8WXX/christina-rumpf-LMzw-JDu6h-TE-unsplash.jpg",
+        "brand": "Black Rifle Coffee",
+        "roasttype": "Light"
+    }
+]}
