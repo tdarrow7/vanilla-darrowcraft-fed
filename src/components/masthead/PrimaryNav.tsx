@@ -10,7 +10,7 @@ export const PrimaryNav = () => {
           {primaryNavLinks.map((link) => {
             return (
               <Link
-                className="py-1 px-2 font-bold text-green-500 hover:text-green-900 transition-colors"
+                className="py-1 px-2 font-bold text-primary hover:text-secondary transition-colors"
                 key={link.name}
                 to={link.href}
               >

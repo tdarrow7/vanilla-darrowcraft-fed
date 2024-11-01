@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { MdOutlineDescription } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
@@ -23,8 +22,6 @@ interface CodeProjectProps extends CodeProjectModel {
 }
 
 export const CodeProject = (props: CodeProjectProps) => {
-  console.log(props);
-
   return (
     <div
       className={`w-full md:w-3/4 sm:w-4/5 p-4 ${
