@@ -6,7 +6,7 @@ export const Home = () => {
   const hd = false;
   return (
     <section className="mx">
-      <article className="prose prose-headings:font-bold prose-h1:text-5xl prose-h2:text-4xl max-w-none">
+      <article className="prose prose-headings:font-bold prose-h1:text-5xl prose-h2:text-4xl max-w-full">
         <h1 className="">DarrowCraft&apos;s Premium Coffee</h1>
         <p className="">Welcome to the homepage! </p>
 

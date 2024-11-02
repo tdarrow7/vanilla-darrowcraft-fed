@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import { QuantityCounter } from "../ui/QuantityCounter";
 
 import { CoffeeModel } from "../../models/Coffee";
 import { Button } from "../Button";
 import { useParams } from "react-router-dom";
 import { QuantityCounter } from "../QuantityCounter";
+import { CartContext, CartItem } from "../../contexts/cart.context";
 // import Image from "next/image";
 // import { CoffeeModel } from "@/models/coffee";
 // import { addToCart } from "@/actions/cart";
@@ -19,6 +20,7 @@ export const CoffeeDetails = () => {
   const [loading, setloading] = useState(true);
   const [coffee, setCoffee] = useState<CoffeeModel | null>(null);
   const [quantity, setQuantity] = useState(0);
+  const ctx = useContext(CartContext);
   //   const service = new CartService();
 
   useEffect(() => {
@@ -44,7 +46,16 @@ export const CoffeeDetails = () => {
   };
 
   const handleAddToCart = () => {
-    console.log("adding to cart", quantity);
+    if (!coffee) return;
+    const newItem: CartItem = {
+      id: coffee.id,
+      coffee: coffee.name,
+      quantity: quantity,
+    };
+    console.log("adding to cart", newItem);
+
+    ctx.addItem(newItem);
+    setQuantity(0);
     // addToCart(coffee.id, quantity);
   };
 
