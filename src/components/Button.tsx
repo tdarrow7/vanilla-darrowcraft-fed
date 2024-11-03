@@ -5,11 +5,17 @@ type Props = {
   href?: string;
   newTab?: boolean;
   onclick?: () => void;
+  disabled?: boolean;
 };
-const defaultClass =
-  "py-4 px-10 bg-black hover:bg-stone-900 uppercase text-white cursor-pointer";
+const defaultClass = "py-4 px-10 bg-black uppercase text-white";
 
-export const Button = ({ text, href, newTab, onclick }: Props) => {
+export const Button = ({
+  text,
+  href,
+  newTab,
+  onclick,
+  disabled = false,
+}: Props) => {
   return (
     <>
       {href ? (
@@ -17,14 +23,33 @@ export const Button = ({ text, href, newTab, onclick }: Props) => {
           to={href}
           target={`${newTab} ? _blank : ''`}
           rel={`${newTab} ? noopener noreferrer: ''`}
-          className={defaultClass}
+          className={`${defaultClass} ${
+            disabled
+              ? "disabled cursor-default opacity-75 "
+              : "cursor-pointer hover:bg-stone-900"
+          }`}
         ></Link>
       ) : onclick ? (
-        <span className={defaultClass} onClick={onclick}>
+        <span
+          className={`${defaultClass} ${
+            disabled
+              ? "disabled cursor-default opacity-75 "
+              : "cursor-pointer hover:bg-stone-900"
+          }`}
+          onClick={onclick}
+        >
           {text}
         </span>
       ) : (
-        <span className={defaultClass}>{text}</span>
+        <span
+          className={`${defaultClass} ${
+            disabled
+              ? "disabled cursor-default opacity-75 "
+              : "cursor-pointer hover:bg-stone-900"
+          }`}
+        >
+          {text}
+        </span>
       )}
     </>
   );

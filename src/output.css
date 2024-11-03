@@ -1320,6 +1320,10 @@ svg:not(.ovrd) {
   cursor: pointer;
 }
 
+.cursor-default {
+  cursor: default;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1428,14 +1432,6 @@ svg:not(.ovrd) {
 
 .fill-green-500 {
   fill: #22c55e;
-}
-
-.fill-green-600 {
-  fill: #16a34a;
-}
-
-.fill-primary {
-  fill: rgb(144 94 68);
 }
 
 .p-1 {
@@ -1554,6 +1550,11 @@ svg:not(.ovrd) {
   line-height: 1;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-green-500 {
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
@@ -1569,22 +1570,16 @@ svg:not(.ovrd) {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-secondary {
-  --tw-text-opacity: 1;
-  color: rgb(96 63 46 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .opacity-5 {
   opacity: 0.05;
 }
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
 }
 
 .shadow-sm {
@@ -1619,30 +1614,19 @@ svg:not(.ovrd) {
   border-style: none;
 }
 
-.hover\:scale-110:hover {
-  --tw-scale-x: 1.1;
-  --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:bg-stone-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 25 23 / var(--tw-bg-opacity));
 }
 
-.hover\:text-green-900:hover {
+.hover\:text-secondary:hover {
   --tw-text-opacity: 1;
-  color: rgb(20 83 45 / var(--tw-text-opacity));
+  color: rgb(96 63 46 / var(--tw-text-opacity));
 }
 
 .hover\:text-stone-600:hover {
   --tw-text-opacity: 1;
   color: rgb(87 83 78 / var(--tw-text-opacity));
-}
-
-.hover\:text-secondary:hover {
-  --tw-text-opacity: 1;
-  color: rgb(96 63 46 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:translate-x-2 {
@@ -1660,10 +1644,6 @@ svg:not(.ovrd) {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.group:hover .group-hover\:fill-secondary {
-  fill: rgb(96 63 46);
 }
 
 .group:hover .group-hover\:opacity-75 {

@@ -2,20 +2,22 @@ import { AiFillPlusCircle } from "react-icons/ai";
 import { AiFillMinusCircle } from "react-icons/ai";
 
 interface QuantityCounterProps {
+  id?: number;
   quantity: number;
-  setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  onQuantityChange: (newQuantity: number, id?: number) => void;
 }
 
 export const QuantityCounter: React.FC<QuantityCounterProps> = ({
+  id,
   quantity,
-  setQuantity,
+  onQuantityChange,
 }) => {
   const handleDecrement = () => {
-    setQuantity((prev) => (prev > 0 ? prev - 1 : prev));
+    if (quantity > 0) onQuantityChange(quantity - 1, id);
   };
 
   const handleIncrement = () => {
-    setQuantity((prev) => prev + 1);
+    onQuantityChange(quantity + 1, id);
   };
 
   return (
