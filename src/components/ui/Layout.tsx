@@ -9,7 +9,7 @@ export const Layout = (props: Props) => {
   return (
     <>
       <Masthead />
-      <main className="container mx-auto py-8">
+      <main className="container mx-auto py-8 px-4">
         <Outlet />
       </main>
       <Footer />

@@ -45,12 +45,17 @@ export const CoffeeDetails = () => {
     }
   };
 
+  const handleUpdateQuantity = (newQuantity: number) => {
+    setQuantity(newQuantity);
+  };
+
   const handleAddToCart = () => {
-    if (!coffee) return;
+    if (!coffee || quantity === 0) return;
     const newItem: CartItem = {
       id: coffee.id,
       coffee: coffee.name,
       quantity: quantity,
+      imageUrl: coffee.imageurl,
     };
     console.log("adding to cart", newItem);
 
@@ -87,9 +92,13 @@ export const CoffeeDetails = () => {
             <p>{coffee?.description}</p>
             <QuantityCounter
               quantity={quantity}
-              setQuantity={setQuantity}
+              onQuantityChange={handleUpdateQuantity}
             ></QuantityCounter>
-            <Button text="Add to Cart" onclick={handleAddToCart}></Button>
+            <Button
+              text="Add to Cart"
+              onclick={handleAddToCart}
+              disabled={quantity === 0}
+            ></Button>
           </div>
         </div>
       )}

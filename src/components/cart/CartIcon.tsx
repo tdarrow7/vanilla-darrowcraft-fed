@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CgShoppingCart } from "react-icons/cg";
 import { CartContext } from "../../contexts/cart.context";
+import LinkEl from "../ui/LinkEl";
+import { Link } from "react-router-dom";
 
 export const CartIcon = () => {
   const { cartState } = useContext(CartContext);
@@ -13,7 +15,7 @@ export const CartIcon = () => {
   }, [cartState.totalItemCount]);
   const hasItems = cartState.items.length > 0;
   return (
-    <button className="relative group text-black">
+    <Link to="/cart" className="relative group text-black">
       <CgShoppingCart className="text-lg " />
       {hasItems && (
         <span
@@ -24,6 +26,6 @@ export const CartIcon = () => {
           {cartState.items.length}
         </span>
       )}
-    </button>
+    </Link>
   );
 };

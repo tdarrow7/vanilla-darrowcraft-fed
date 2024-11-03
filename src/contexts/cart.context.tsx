@@ -10,6 +10,7 @@ export type CartItem = {
   id: number;
   coffee: string;
   quantity: number;
+  imageUrl?: string;
 };
 
 type CartState = {
@@ -112,6 +113,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const updateItem = (id: number, quantity: number) => {
+    console.log("in updateItem");
+
     const updatedItems = cartState.items.map((item) =>
       item.id === id ? { ...item, quantity } : item
     );
