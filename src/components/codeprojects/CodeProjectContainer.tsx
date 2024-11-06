@@ -1,34 +1,48 @@
 import React, { useEffect, useState } from "react";
 import { CodeProjectModel } from "./CodeProject";
 import { CodeProjectList } from "./CodeProjectList";
-import "../../api/codeprojects.json";
+import { Observable, Subject } from "rxjs";
+import { ajax } from "rxjs/ajax";
+import { switchMap, tap, map, catchError } from "rxjs/operators";
+
+// Define the API URL
+const api = "https://api.timdarrow.com/codeprojects";
+
+// Subject to trigger data fetching
+const fetchDataSubject = new Subject<void>();
+
+// Observable to handle the API call
+const codeProjects$: Observable<CodeProjectModel[]> = fetchDataSubject.pipe(
+  switchMap(() =>
+    ajax.getJSON<CodeProjectModel[]>(api).pipe(
+      tap({
+        next: () => console.log("Data fetched successfully"),
+        error: (error) => console.warn("Error fetching data", error),
+      }),
+      catchError(() => []) // Return an empty array in case of error
+    )
+  )
+);
 
 export const CodeProjectContainer = () => {
-  const [loading, setIsLoading] = useState(true);
-  const [codeProjectList, setcodeProjectList] = useState<CodeProjectModel[]>(
+  const [loading, setLoading] = useState(true);
+  const [codeProjectList, setCodeProjectList] = useState<CodeProjectModel[]>(
     []
   );
+
   useEffect(() => {
-    const setDataAndSetState = async () => {
-      const data = await fetchData();
+    // Subscribe to the observable to get data and update the state
+    const subscription = codeProjects$.subscribe((data) => {
+      setCodeProjectList(data);
+      setLoading(false);
+    });
 
-      setcodeProjectList(data);
-      setIsLoading(false);
-    };
+    // Trigger the initial data fetch
+    fetchDataSubject.next();
 
-    setDataAndSetState();
+    // Clean up the subscription on unmount
+    return () => subscription.unsubscribe();
   }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://api.timdarrow.com/codeprojects");
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.warn("something seriously went wrong", error);
-    }
-  };
 
   return (
     <>

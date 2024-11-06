@@ -21,11 +21,6 @@ export const CodeProjectList = ({ codeProjectList, children }: Props) => {
     return codeProjectList.filter((project) => project.stacktype === type);
   });
 
-  // console.log(codeProjectList);
-
-  console.log(distinctStackTypes);
-  console.log(groupedProjectsByStack);
-
   return (
     <>
       {groupedProjectsByStack.map((projectArray) => {
