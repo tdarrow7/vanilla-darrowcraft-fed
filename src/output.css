@@ -1191,6 +1191,18 @@ svg:not(.ovrd) {
   top: 0.25rem;
 }
 
+.right-6 {
+  right: 1.5rem;
+}
+
+.right-4 {
+  right: 1rem;
+}
+
+.top-3 {
+  top: 0.75rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1316,12 +1328,12 @@ svg:not(.ovrd) {
   animation: bounce 1s linear 2s;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
-
 .cursor-default {
   cursor: default;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .grid-cols-1 {
@@ -1480,16 +1492,17 @@ svg:not(.ovrd) {
   padding-bottom: 2rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pb-\[100\%\] {
   padding-bottom: 100%;
 }
 
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pt-6 {
-  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -1669,6 +1682,10 @@ svg:not(.ovrd) {
     display: block;
   }
 
+  .sm\:flex {
+    display: flex;
+  }
+
   .sm\:hidden {
     display: none;
   }
@@ -1687,6 +1704,10 @@ svg:not(.ovrd) {
 }
 
 @media (min-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+
   .md\:w-3\/4 {
     width: 75%;
   }
