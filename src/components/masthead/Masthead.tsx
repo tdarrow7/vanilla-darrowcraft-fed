@@ -6,6 +6,7 @@
 // import { SignInOut } from './SignInOut'
 
 import { LogoBox } from "./LogoBox";
+import { MobileNav } from "./MobileNav";
 import { PrimaryNav } from "./PrimaryNav";
 import { SecondaryNav } from "./SecondaryNav";
 
@@ -17,9 +18,9 @@ export const Masthead = () => {
           <LogoBox />
           <div className="flex flex-col justify-between items-end">
             <div className="flex items-center">
-              {/* <SignInOut/>
-                            <CartIcon/>
-                            <MobileNav/> */}
+              {/* <SignInOut/> */}
+              {/* <CartIcon/> */}
+              <MobileNav />
             </div>
             <div className="hidden sm:block">
               <SecondaryNav />

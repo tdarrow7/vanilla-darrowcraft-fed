@@ -46,7 +46,7 @@ export const CodeProject = (props: CodeProjectProps) => {
         &nbsp;
         {props.languages}
       </div>
-      <div className="mt-2 flex">
+      <div className="mt-2 hidden sm:flex">
         <strong className="flex items-center">
           <IoIosLink className="text-lg mr-1" />
           Link:
@@ -55,7 +55,7 @@ export const CodeProject = (props: CodeProjectProps) => {
         <LinkEl name={props.link} className="" target="" to={props.link} />
       </div>
       {props.github && (
-        <div className="flex mt-2">
+        <div className="hidden sm:flex mt-2">
           <strong className="flex items-center">
             <FaGithub className="text-lg mr-1" />
             Github:
