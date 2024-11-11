@@ -25,7 +25,6 @@ import { CoffeeCard } from "./CoffeeCard";
 export const CoffeeGrid = () => {
   const [coffeeList, setCoffeeList] = useState<CoffeeModel[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchDataAndSetState = async () => {

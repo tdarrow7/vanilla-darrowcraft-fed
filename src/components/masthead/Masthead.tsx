@@ -1,10 +1,3 @@
-// import CartIcon from './Cart/CartIcon'
-// import {LogoBox} from './LogoBox'
-// import { MobileNav } from './navigation/MobileNav'
-// import { PrimaryNav } from './navigation/PrimaryNav'
-// import { SecondaryNav } from './navigation/SecondaryNav'
-// import { SignInOut } from './SignInOut'
-
 import { LogoBox } from "./LogoBox";
 import { MobileNav } from "./MobileNav";
 import { PrimaryNav } from "./PrimaryNav";
@@ -18,8 +11,6 @@ export const Masthead = () => {
           <LogoBox />
           <div className="flex flex-col justify-between items-end">
             <div className="flex items-center">
-              {/* <SignInOut/> */}
-              {/* <CartIcon/> */}
               <MobileNav />
             </div>
             <div className="hidden sm:block">
