@@ -1,9 +1,17 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import { CodeProjectContainer } from "../components/codeprojects/CodeProjectContainer";
+import { CoffeeGrid } from "../components/coffee/CoffeeGrid";
+
+const hd = true;
 
 export const Home = () => {
-  const hd = false;
+  if (hd)
+    return (
+      <>
+        <CoffeeGrid />
+      </>
+    );
+
   return (
     <section className="mx">
       <article className="prose prose-headings:font-bold prose-h1:text-5xl prose-h2:text-4xl max-w-full">
@@ -41,6 +49,7 @@ export const Home = () => {
           </div>
         )}
       </article>
+      <div>test</div>
       <Outlet />
     </section>
   );
