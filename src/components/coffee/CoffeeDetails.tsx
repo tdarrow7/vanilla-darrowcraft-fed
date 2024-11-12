@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 // import { QuantityCounter } from "../ui/QuantityCounter";
 
 import { CoffeeModel } from "../../models/Coffee";
@@ -6,44 +6,20 @@ import { Button } from "../Button";
 import { useParams } from "react-router-dom";
 import { QuantityCounter } from "../QuantityCounter";
 import { CartContext, CartItem } from "../../contexts/cart.context";
-// import Image from "next/image";
-// import { CoffeeModel } from "@/models/coffee";
-// import { addToCart } from "@/actions/cart";
-// import { CartService } from "@/services/cart.service";
+import { defaultGETconfig, useHttp } from "../../hooks/useHttp";
 
-interface Props {
-  coffee: CoffeeModel;
-}
+const requestConfig = { ...defaultGETconfig };
 
 export const CoffeeDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setloading] = useState(true);
-  const [coffee, setCoffee] = useState<CoffeeModel | null>(null);
+
+  const { data: coffee, isFetching: isLoading } = useHttp<CoffeeModel>(
+    `https://api.timdarrow.com/coffee/${id}`,
+    requestConfig
+  );
+
   const [quantity, setQuantity] = useState(0);
   const ctx = useContext(CartContext);
-  //   const service = new CartService();
-
-  useEffect(() => {
-    const fetchDataAndSetState = async () => {
-      const data = await fetchData();
-      setCoffee(data);
-      setloading(false);
-    };
-
-    fetchDataAndSetState();
-  }, [id]);
-
-  const fetchData = async () => {
-    if (!id) return null;
-
-    try {
-      const response = await fetch(`https://api.timdarrow.com/coffee/${id}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.warn(error);
-    }
-  };
 
   const handleUpdateQuantity = (newQuantity: number) => {
     setQuantity(newQuantity);
@@ -61,14 +37,11 @@ export const CoffeeDetails = () => {
 
     ctx.addItem(newItem);
     setQuantity(0);
-    // addToCart(coffee.id, quantity);
   };
-
-  //   console.log("cart service:", service.returnData());
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <p>Loading</p>
       ) : (
         <div className="flex justify-between">

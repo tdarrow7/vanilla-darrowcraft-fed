@@ -7,48 +7,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CoffeeModel } from "../../models/Coffee";
 import { CoffeeCard } from "./CoffeeCard";
+import { useHttp, defaultGETconfig } from "../../hooks/useHttp";
 
-// export interface CoffeeModel {
-//   id: number;
-//   name: string;
-//   isGround: boolean;
-//   dateadded: Date;
-//   roastType: number;
-//   description?: string;
-//   imageurl: string;
-// }
-
-// interface CoffeeList {
-//   coffeeList: CoffeeModel[];
-// }
+const requestConfig = { ...defaultGETconfig };
 
 export const CoffeeGrid = () => {
-  const [coffeeList, setCoffeeList] = useState<CoffeeModel[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchDataAndSetState = async () => {
-      const data = await fetchData();
-      setCoffeeList(data);
-      setLoading(false);
-    };
-
-    fetchDataAndSetState();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch("https://api.timdarrow.com/coffee/");
-      const data = await response.json();
-      return data;
-    } catch (error: any) {
-      console.warn(error);
-    }
-  };
+  const { data: coffeeList, isFetching: isLoading } = useHttp<CoffeeModel[]>(
+    "https://api.timdarrow.com/coffee/",
+    requestConfig,
+    []
+  );
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <p>Loading....</p>
       ) : (
         <ul className="grid gap-6 grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
